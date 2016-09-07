@@ -8,23 +8,27 @@ var favoriteWords = [
 var numberWords = [1: "one"]
 
 var definition = favoriteWords["rigmarole"]
+print(definition)
+
+if let definition = definition {
+    print(definition)
+}
 
 var nonexistentDefinition = favoriteWords["strategery"]
 
-if let definition = definition {
-    print("The definition of 'rigmarole' is '\(definition)'")
-} else {
-    print("'rigmarole' isn't a word!")
-}
 
-if let definition = nonexistentDefinition {
+
+
+favoriteWords["strategery"] = "strategy" //adding to dictionary
+definition = favoriteWords["strategery"]
+
+
+if let definition = definition {
     print("The definition of 'strategery' is '\(definition)'")
 } else {
     print("'strategery' isn't a word")
 }
 
-favoriteWords["strategery"] = "strategy"
-definition = favoriteWords["strategery"]
 
-favoriteWords["strategery"] = nil
+favoriteWords["strategery"] = nil //removing from dictionary
 print(favoriteWords)
